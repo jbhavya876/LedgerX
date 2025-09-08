@@ -1,0 +1,32 @@
+---
+id: 0
+name: Testnet deployment
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: NFTToken
+            expected-sender: ST3BWHBBVPKWQ4KX0TC3BZ2GYG96F3RK8JC6ETXSC
+            cost: 109140
+            path: contracts/NFTToken.clar
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: priceOracle
+            expected-sender: ST3BWHBBVPKWQ4KX0TC3BZ2GYG96F3RK8JC6ETXSC
+            cost: 118660
+            path: contracts/priceOracle.clar
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
+            contract-name: propertyTokenizer
+            expected-sender: ST3BWHBBVPKWQ4KX0TC3BZ2GYG96F3RK8JC6ETXSC
+            cost: 108650
+            path: contracts/propertyTokenizer.clar
+            anchor-block-only: true
+            clarity-version: 3
+      epoch: "3.2"
