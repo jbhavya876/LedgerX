@@ -1,5 +1,10 @@
 # 🏠 LedgerX - Real Estate Tokenization Platform
 
+[![Stacks](https://img.shields.io/badge/Built%20on-Stacks-5546FF?style=for-the-badge&logo=stacks&logoColor=white)](https://www.stacks.co/)
+[![Clarity](https://img.shields.io/badge/Smart%20Contracts-Clarity-purple?style=for-the-badge)](https://clarity-lang.org/)
+[![Bitcoin](https://img.shields.io/badge/Secured%20by-Bitcoin-F7931A?style=for-the-badge&logo=bitcoin&logoColor=white)](https://bitcoin.org/)
+
+
 A decentralized real estate tokenization platform built on Stacks blockchain that enables fractional property ownership through NFT-based tokens. LedgerX democratizes real estate investment by lowering capital barriers and providing liquidity to traditionally illiquid assets.
 
 ## 📑 Table of Contents
