@@ -306,8 +306,9 @@ LedgerX/
 │
 ├── .env.example # Environment template
 ├── Clarinet.toml # Clarinet configuration
-├── package.json
-└── README.md
+├── package.json # Node dependencies
+├── package-lock.json
+├── LICENSE
 
 ---
 
