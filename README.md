@@ -223,13 +223,16 @@ clarinet deploy --testnet
 ## 💡 Usage Examples
 
 ### Example 1: Create a Property
+
+Create a new tokenized property with unique ID, address, total value, and token supply.
+
 await makeContractCall({
 contractAddress: CONTRACT_PRINCIPAL,
 contractName: 'propertyTokenizer',
 functionName: 'create-tokenized-property',
 functionArgs: [
-stringAsciiCV('PROP-NYC-001'),
-stringAsciiCV('456 Park Avenue, New York'),
+stringAsciiCV('PROP-NYC-001'), // Property ID
+stringAsciiCV('456 Park Avenue, New York'), // Address
 uintCV(50000000), // $500k in cents
 uintCV(500) // 500 tokens
 ],
@@ -237,7 +240,20 @@ senderKey: PRIVATE_KEY,
 network: new StacksTestnet()
 });
 
+text
+
+**Parameters:**
+- `property-id`: Unique identifier (e.g., 'PROP-NYC-001')
+- `address`: Physical property address
+- `total-value`: Property value in cents
+- `token-supply`: Number of fractional tokens
+
+---
+
 ### Example 2: Mint NFT Tokens
+
+Mint NFT tokens for a property and assign them to the owner.
+
 await makeContractCall({
 contractAddress: CONTRACT_PRINCIPAL,
 contractName: 'NFTToken',
@@ -245,43 +261,71 @@ functionName: 'mint-property-tokens',
 functionArgs: [
 stringAsciiCV('PROP-NYC-001'),
 stringAsciiCV('456 Park Avenue, New York'),
-uintCV(100),
-principalCV(OWNER_ADDRESS)
+uintCV(100), // Number of tokens to mint
+principalCV(OWNER_ADDRESS) // Owner's Stacks address
 ],
 senderKey: PRIVATE_KEY,
 network: new StacksTestnet()
 });
 
+text
+
+**Returns:** Transaction ID for the minting operation
+
+---
+
 ### Example 3: Buy a Token
+
+Purchase a specific property token by index.
+
 await makeContractCall({
 contractAddress: CONTRACT_PRINCIPAL,
 contractName: 'propertyTokenizer',
 functionName: 'buy-token',
 functionArgs: [
-stringAsciiCV('PROP-NYC-001'),
-uintCV(0), // token index
-uintCV(1000) // payment in cents
+stringAsciiCV('PROP-NYC-001'), // Property ID
+uintCV(0), // Token index (0-based)
+uintCV(1000) // Payment in cents
 ],
 senderKey: BUYER_PRIVATE_KEY,
 network: new StacksTestnet()
 });
 
+text
+
+**Requirements:**
+- Buyer must have sufficient STX balance
+- Token must be available for purchase
+- Property must be active (not paused)
+
+---
+
 ### Example 4: Submit Oracle Price Feed
+
+Oracle providers submit property valuations with confidence scores.
+
 await makeContractCall({
 contractAddress: CONTRACT_PRINCIPAL,
 contractName: 'priceOracle',
 functionName: 'submit-price-feed',
 functionArgs: [
-stringAsciiCV('PROP-NYC-001'),
-uintCV(51000000), // new valuation
-uintCV(9500), // confidence (95%)
-stringAsciiCV('zillow-api'),
-stringAsciiCV('valuation'),
-stringAsciiCV('metadata')
+stringAsciiCV('PROP-NYC-001'), // Property ID
+uintCV(51000000), // New valuation ($510k)
+uintCV(9500), // Confidence score (95%)
+stringAsciiCV('zillow-api'), // Data source
+stringAsciiCV('valuation'), // Feed type
+stringAsciiCV('metadata') // Additional metadata
 ],
 senderKey: ORACLE_PRIVATE_KEY,
 network: new StacksTestnet()
 });
+
+text
+
+**Oracle Requirements:**
+- Must be registered as an oracle
+- Must have staked minimum required amount
+- Confidence score between 0-10000 (basis points)
 
 
 ## 📁 Project Structure
