@@ -284,33 +284,33 @@ network: new StacksTestnet()
 });
 
 
----
-
 ## 📁 Project Structure
+
+<pre>
 LedgerX/
 │
 ├── contracts/
-│ ├── propertyTokenizer.clar # Main tokenization logic
-│ ├── NFTToken.clar # NFT implementation
-│ └── priceOracle.clar # Oracle system
+│   ├── propertyTokenizer.clar    # Main tokenization logic
+│   ├── NFTToken.clar              # NFT implementation
+│   └── priceOracle.clar           # Oracle system
 │
 ├── tests/
-│ ├── propertyTokenizer.test.ts
-│ ├── NFTToken.test.ts
-│ └── priceOracle.test.ts
+│   ├── propertyTokenizer.test.ts
+│   ├── NFTToken.test.ts
+│   └── priceOracle.test.ts
 │
 ├── scripts/
-│ ├── test-rwa.js # Integration tests
-│ ├── deploy.js # Deployment script
-│ └── validate-env.js # Environment validator
+│   ├── test-rwa.js                # Integration tests
+│   ├── deploy.js                  # Deployment script
+│   └── validate-env.js            # Environment validator
 │
-├── .env.example # Environment template
-├── Clarinet.toml # Clarinet configuration
-├── package.json # Node dependencies
+├── .env.example                   # Environment template
+├── Clarinet.toml                  # Clarinet configuration
+├── package.json                   # Node dependencies
 ├── package-lock.json
 ├── LICENSE
-
----
+└── README.md
+</pre>
 
 ## 🔧 API Reference
 
