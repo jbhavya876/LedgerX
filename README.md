@@ -240,7 +240,6 @@ senderKey: PRIVATE_KEY,
 network: new StacksTestnet()
 });
 
-text
 
 **Parameters:**
 - `property-id`: Unique identifier (e.g., 'PROP-NYC-001')
@@ -268,7 +267,6 @@ senderKey: PRIVATE_KEY,
 network: new StacksTestnet()
 });
 
-text
 
 **Returns:** Transaction ID for the minting operation
 
@@ -291,7 +289,6 @@ senderKey: BUYER_PRIVATE_KEY,
 network: new StacksTestnet()
 });
 
-text
 
 **Requirements:**
 - Buyer must have sufficient STX balance
@@ -320,7 +317,6 @@ senderKey: ORACLE_PRIVATE_KEY,
 network: new StacksTestnet()
 });
 
-text
 
 **Oracle Requirements:**
 - Must be registered as an oracle
