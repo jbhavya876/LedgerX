@@ -323,6 +323,8 @@ network: new StacksTestnet()
 - Must have staked minimum required amount
 - Confidence score between 0-10000 (basis points)
 
+---
+
 
 ## 📁 Project Structure
 
